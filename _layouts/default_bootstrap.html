@@ -34,8 +34,8 @@
 <li>
      <span class="site-tag">
 <h4>
-        <a href="/{{ category[0] }}/#{{ category | first | slugify }}">
-                {{ category[0] | replace:'-', ' ' }} ({{ category | last | size }})
+        <a href="/category/{{ category[0] }}/#{{ category | first | slugify }}"><button class="btn btn-warning" type="button">
+                {{ category[0] | replace:'-', ' ' }} <span class="badge">{{ category | last | size }}</span></button>
         </a>
 </h4>
     </span>

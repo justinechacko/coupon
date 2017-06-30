@@ -13,17 +13,29 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            {% for my_page in site.pages %}
-            {% if my_page.title %}
-            <li><a class="page-link" href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a></li>
-            {% endif %}
-            {% endfor %}
-            <form class="navbar-form navbar-left" role="search" method="get" action="{{site.baseurl}}/search2/">
-            <div class="form-group">
+	   <form class="navbar-form navbar-left" role="search" method="get" action="{{site.baseurl}}/search2/">
+            <div class="input-group">
             <input type="text" class="form-control" placeholder="Search" id="search-box" name="query">
+            <div class="input-group-btn">
+            <button class="btn btn-default" type="submit">
+            <i class="glyphicon glyphicon-search"></i>
+            </button>
             </div>
-            <button type="submit" class="btn btn-default">Search</button>
+            </div>
             </form>
+           <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Categories <span class="caret"></span></a>
+             <ul class="dropdown-menu">
+             {% assign categories = site.categories | sort %}
+             {% for category in categories %}
+              <li><a href="/category/{{ category[0] }}/#{{ category | first | slugify }}">
+                {{ category[0] | replace:'-', ' ' }} ({{ category | last | size }})
+        </a></li>
+            
+            {% endfor %}
+              </ul>
+             </li>
+            
           </ul>
         </div><!--/.nav-collapse -->
       </div><!--/.container-fluid -->
