@@ -34,7 +34,7 @@
 <li>
      <span class="site-tag">
 <h4>
-        <a href="/category/{{ category[0] }}/#{{ category | first | slugify }}"><button class="btn btn-warning" type="button">
+        <a href="/category/{{ category[0] }}/#{{ category | first | slugify }}"><button class="btn btn-default" type="button">
                 {{ category[0] | replace:'-', ' ' }} <span class="badge">{{ category | last | size }}</span></button>
         </a>
 </h4>
@@ -59,10 +59,11 @@
 <li>
      <span class="site-tag">
 <h4>
-        <a href="/{{ tag[0] }}/#{{ tag | first | slugify }}">
-                {{ tag[0] | replace:'-', ' ' }} ({{ tag | last | size }})
+        <a href="/store/{{ tag[0] }}/#{{ tag | first | slugify }}"><button class="btn btn-default" type="button">
+                {{ tag[0] | replace:'-', ' ' }} <span class="badge">{{ tag | last | size }}</span></button>
         </a>
 </h4>
+
     </span>
 </li>
     {% endfor %}

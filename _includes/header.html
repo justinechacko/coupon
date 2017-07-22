@@ -12,8 +12,92 @@
           <a class="navbar-brand" href="{{ site.baseurl }}/">{{ site.title}}</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right">
-	   <form class="navbar-form navbar-left" role="search" method="get" action="{{site.baseurl}}/search2/">
+          <ul class="nav navbar-nav">
+	   
+           <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Categories <span class="caret"></span></a>
+             <ul class="dropdown-menu multi-level">
+		<li class="dropdown-submenu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Recharge</a>
+				<ul class="dropdown-menu">
+		                        <li><a href="{{ site.baseurl }}/category/mobile-recharge">Mobile Recharge</a></li>
+					<li><a href="{{ site.baseurl }}/category/dth-recharge">DTH Recharge</a></li>
+					<li><a href="{{ site.baseurl }}/category/bill-payments">Bill Payments</a></li>
+				</ul>
+		</li>
+		<li class="dropdown-submenu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Food & Dining</a>
+				<ul class="dropdown-menu">
+		                        <li><a href="{{ site.baseurl }}/category/pizza">Pizza</a></li>
+					<li><a href="{{ site.baseurl }}/category/food-delivery">Food Delivery</a></li>
+					<li><a href="{{ site.baseurl }}/category/grocery">Grocery</a></li>
+				</ul>
+		</li>
+		<li class="dropdown-submenu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Fashon</a>
+				<ul class="dropdown-menu">
+		                        <li><a href="{{ site.baseurl }}/category/clothing">Clothing</a></li>
+					<li><a href="{{ site.baseurl }}/category/footwear">Footwear</a></li>
+				</ul>
+		</li>
+		<li class="dropdown-submenu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Travel</a>
+				<ul class="dropdown-menu">
+		                        <li><a href="{{ site.baseurl }}/category/bus">Bus</a></li>
+					<li><a href="{{ site.baseurl }}/category/flight">Flight</a></li>
+					<li><a href="{{ site.baseurl }}/category/train">Train</a></li>
+					<li><a href="{{ site.baseurl }}/category/cabs">Cabs</a></li>
+					<li><a href="{{ site.baseurl }}/category/hotel">Hotel</a></li>
+				</ul>
+		</li>
+		<li class="dropdown-submenu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Other Popular</a>
+				<ul class="dropdown-menu">
+		                        <li><a href="{{ site.baseurl }}/category/mobiles">Mobiles</a></li>
+					<li><a href="{{ site.baseurl }}/category/laptops">Laptops</a></li>
+					<li><a href="{{ site.baseurl }}/category/movie-tickets">Movie tickets</a></li>
+				</ul>
+		</li>
+		<li><a href="{{ site.baseurl }}/categoryview">View all categories</a></li>
+	    </ul>
+	   </li>
+	   
+<!--
+             {% assign categories = site.categories | sort %}
+             {% for category in categories %}
+              <li><a href="/category/{{ category[0] }}/#{{ category | first | slugify }}">
+                {{ category[0] | replace:'-', ' ' }} ({{ category | last | size }})
+        </a></li>
+            
+            {% endfor %}
+-->
+
+
+	    <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Stores<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="/pages/dha">Amazon</a></li>
+            <li><a href="/pages/moh">Flipkart</a></li>
+	    <li><a href="/pages/dha">Myntra</a></li>
+            <li><a href="/pages/moh">Domino's Pizza</a></li>
+	    <li><a href="/pages/dha">Make My Trip</a></li>
+            <li><a href="/pages/moh">Tata Cliq</a></li>
+	    <li><a href="/pages/dha">Big Basket</a></li>
+            <li><a href="/pages/moh">Book My Show</a></li>
+	    <li><a href="/pages/dha">Health Kart</a></li>
+            <li><a href="/pages/moh">NearBuy</a></li>
+	    <li><a href="/pages/dha">Jabong</a></li>
+            <li><a href="/pages/moh">Paytm</a></li>
+	    <li><a href="/pages/dha">Mobikwik</a></li>
+            <li><a href="/pages/moh">Freecharge</a></li>
+	    <li><a href="/pages/dha">AJIO</a></li>
+            <li><a href="{{ site.baseurl }}/storeview">View all stores</a></li>
+          </ul>
+        </li>
+	<li><a class="page-link" href="{{ site.baseurl }}/about">About Us</a></li>
+	<li><a class="page-link" href="{{ site.baseurl }}/contact">Contact Us</a></li>
+	
+	    <form class="navbar-form navbar-right" role="search" method="get" action="{{site.baseurl}}/search2/">
             <div class="input-group">
             <input type="text" class="form-control" placeholder="Search" id="search-box" name="query">
             <div class="input-group-btn">
@@ -23,20 +107,8 @@
             </div>
             </div>
             </form>
-           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Categories <span class="caret"></span></a>
-             <ul class="dropdown-menu">
-             {% assign categories = site.categories | sort %}
-             {% for category in categories %}
-              <li><a href="/category/{{ category[0] }}/#{{ category | first | slugify }}">
-                {{ category[0] | replace:'-', ' ' }} ({{ category | last | size }})
-        </a></li>
-            
-            {% endfor %}
               </ul>
-             </li>
-            
-          </ul>
+
         </div><!--/.nav-collapse -->
       </div><!--/.container-fluid -->
     </nav>
