@@ -8,11 +8,13 @@
 
   <title>Bus</title>
   <meta name="description" content="Coupons, Promo codes, Deals.">
-
+  <script src="/js/jquery-3.2.1.min.js"></script>
+	<script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap.min.js"></script>
+	<script src="/js/footer.js"></script>
   <link rel="stylesheet" href="/assets/main.css">
   <link rel="canonical" href="http://localhost:4000/category/bus/">
   <link rel="alternate" type="application/rss+xml" title="Coupon" href="/feed.xml">
-  
+
   
 </head>
 
@@ -39,7 +41,7 @@
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Categories <span class="caret"></span></a>
              <ul class="dropdown-menu multi-level">
 		<li class="dropdown-submenu">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Recharge</a>
+                            <a href="#" class="dropdown-toggle test" data-toggle="dropdown">Recharge<span class="caret"></span></a>
 				<ul class="dropdown-menu">
 		                        <li><a href="/category/mobile-recharge">Mobile Recharge</a></li>
 					<li><a href="/category/dth-recharge">DTH Recharge</a></li>
@@ -47,7 +49,7 @@
 				</ul>
 		</li>
 		<li class="dropdown-submenu">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Food & Dining</a>
+                            <a href="#" class="dropdown-toggle test" data-toggle="dropdown">Food & Dining<span class="caret"></span></a>
 				<ul class="dropdown-menu">
 		                        <li><a href="/category/pizza">Pizza</a></li>
 					<li><a href="/category/food-delivery">Food Delivery</a></li>
@@ -55,14 +57,14 @@
 				</ul>
 		</li>
 		<li class="dropdown-submenu">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Fashon</a>
+                            <a href="#" class="dropdown-toggle test" data-toggle="dropdown">Fashon<span class="caret"></span></a>
 				<ul class="dropdown-menu">
 		                        <li><a href="/category/clothing">Clothing</a></li>
 					<li><a href="/category/footwear">Footwear</a></li>
 				</ul>
 		</li>
 		<li class="dropdown-submenu">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Travel</a>
+                            <a href="#" class="dropdown-toggle test" data-toggle="dropdown">Travel<span class="caret"></span></a>
 				<ul class="dropdown-menu">
 		                        <li><a href="/category/bus">Bus</a></li>
 					<li><a href="/category/flight">Flight</a></li>
@@ -72,7 +74,7 @@
 				</ul>
 		</li>
 		<li class="dropdown-submenu">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Other Popular</a>
+                            <a href="#" class="dropdown-toggle test" data-toggle="dropdown">Other Popular<span class="caret"></span></a>
 				<ul class="dropdown-menu">
 		                        <li><a href="/category/mobiles">Mobiles</a></li>
 					<li><a href="/category/laptops">Laptops</a></li>
@@ -97,6 +99,25 @@
             
             
 -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 	    <li class="dropdown">
@@ -139,6 +160,15 @@
       </div><!--/.container-fluid -->
     </nav>
   </div> <!-- /container -->
+<script>
+$(document).ready(function(){
+  $('.dropdown-submenu a.test').on("click", function(e){
+    $(this).next('ul').toggle();
+    e.stopPropagation();
+    e.preventDefault();
+  });
+});
+</script>
 </header>
 
 <br><br><br>
@@ -281,9 +311,8 @@
 
 </footer>
 
-<script src="/bower_components/jquery/dist/jquery.min.js"></script>
-<script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap.min.js"></script>
-<script src="/js/footer.js"></script>
+
+
 
 
   </body>
