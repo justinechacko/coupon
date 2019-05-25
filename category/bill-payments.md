@@ -17,5 +17,25 @@ permalink: /category/bill-payments/
     {% endif %}
   {% endfor %}
 
+<nav aria-label="Page navigation">
+{% if paginator.total_pages > 1 %}
+  <ul class="pagination">
+{% if paginator.previous_page %}
+    <li class="page-item">
+      <a class="page-link" href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}" tabindex="-1">&laquo; Previous</a>
+    </li>
+{% else %}
+<li class="page-item disabled">
+      <a class="page-link" href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}" tabindex="-1">&laquo; Previous</a>
+    </li>
+{% endif %}
 
+   {% if paginator.next_page %}
+    <li class="page-item"><a class="page-link" href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Next &raquo;</a></li>
+  {% else %}
+    <li class="page-item disabled"><a class="page-link" href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Next &raquo;</a></li>
+  {% endif %}
+  </ul>
+{% endif %}
+</nav> 
 </div>
