@@ -7,7 +7,7 @@ permalink: /category/bill-payments/
 
 
 
-  {% for post in site.categories.bill-payments %}
+  {% for post in paginator.categories.bill-payments %}
     {% if post.url %}
 {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
         <span style="font-size: 18px;"><a href="{{ site.url }}{{ site.baseurl }}{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></span> &bull; <span class="post-meta">{{ post.date | date: date_format }}</span>
@@ -16,7 +16,6 @@ permalink: /category/bill-payments/
 
     {% endif %}
   {% endfor %}
-
 <nav aria-label="Page navigation">
 {% if paginator.total_pages > 1 %}
   <ul class="pagination">
@@ -38,4 +37,5 @@ permalink: /category/bill-payments/
   </ul>
 {% endif %}
 </nav> 
+
 </div>
