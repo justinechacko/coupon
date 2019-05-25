@@ -36,5 +36,5 @@ sass:
   load_paths:
     - _sass                             # original sass
     - bower_components/bootstrap-sass/assets/stylesheets  # bootstrap
-paginate: 3
+paginate: 1
 paginate_path: "page:num"
