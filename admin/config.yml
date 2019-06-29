@@ -1,0 +1,17 @@
+backend:
+  name: git-gateway
+  branch: master # Branch to update (optional; defaults to master)
+media_folder: "images/uploads" # Media files will be stored in the repo under images/uploads
+collections:
+  - name: "post"
+    label: "Post"
+    folder: "_posts"
+    create: true
+    slug: "---"
+    fields:
+      - {label: "Layout", name: "layout", widget: "hidden", default: "post"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Keywords", name: "keywords", widget: "string", required: false}
+      - {label: "Description", name: "description", widget: "string", required: false}
+      - {label: "Thumbnail", name: "thumbnail", widget: "image", required: false}
+      - {label: "Body", name: "body", widget: "markdown", required: false}
